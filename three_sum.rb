@@ -15,3 +15,7 @@ def three_sum(nums)
 end
 
 p three_sum([-1, 0, 1, 2, -4, -4])
+
+# Brute force would be 3 nested loops and result in O(n^3)
+# Sort the array with a complexity of O(NlogN). Then we can do a binary search. That would result in O(N^2logN)
+# Sort the array. O(NlogN) again. Scan through list

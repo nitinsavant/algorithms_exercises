@@ -25,21 +25,24 @@
 
 
 var removeElement = function(nums, val) {
-  var i;
-  var count = 0;
+  var read = 0;
+  var write = 0;
 
-  for (i = 0; i < nums.length; i++) {
-    if (nums[i] !== val) {
-      nums[count] = nums[i];
-      count++;
+  while (read < nums.length) {
+    if (nums[read] !== val) {
+      nums[write] = nums[read];
+      write++;
     }
+    read++;
   }
 
-  return count;
+  return write;
 };
 
 // Space: O(1)
 // Time: O(n)
+
+// Read-write pointer pattern
 
 
 console.log(removeElement([3, 2, 2, 3], 3));

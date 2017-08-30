@@ -10,7 +10,12 @@ def reverse_string(s)
   r_pointer = s.length - 1
 
   while l_pointer < r_pointer
-    s[l_pointer], s[r_pointer] = s[r_pointer], s[l_pointer]
+    temp = s[l_pointer]
+    s[l_pointer] = s[r_pointer]
+    s[r_pointer] = temp
+
+    # s[l_pointer], s[r_pointer] = s[r_pointer], s[l_pointer]
+
     l_pointer += 1
     r_pointer -= 1
   end

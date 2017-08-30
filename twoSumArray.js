@@ -29,9 +29,11 @@
 var twoSum = function(numbers, target) {
   var left = 0;
   var right = numbers.length - 1;
+  var sum;
 
   while (left < right) {
-    var sum = numbers[left] + numbers[right];
+    sum = numbers[left] + numbers[right];
+    
     if (sum === target) {
       return [left + 1, right + 1];
     } else if (sum < target) {
@@ -50,3 +52,9 @@ console.log(twoSum([2, 7, 11, 15], 9));
 console.log(twoSum([0, 0, 2, 7, 11, 15], 9));
 
 console.log(twoSum([0, 1, 2, 7, 11, 15], 15));
+
+// Classic two-pointer solution. Given sorted array. 2 pointers, one at beginning and one at end.
+
+// Looking for two numbers that sum to specific target. Add up two numbers. If the sum is greater than target, then you need to make the sum smaller. ANd the way to do that is to move the pointer on the right to the next smaller number.
+
+// Every step, you can only move each point in one direction. And that keeps the complexity at O(n).

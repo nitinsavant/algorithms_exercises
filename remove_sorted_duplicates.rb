@@ -27,7 +27,7 @@
 
 
 # Space: created hash with worst case n elements --> O(n)
-# Time: n comparisons, n lookups, n deletions --> O(n)
+# Time: n comparisons, n lookups, n deletions --> O(n^2)
 
 def remove_duplicates(nums)
   i = 0
@@ -46,6 +46,30 @@ def remove_duplicates(nums)
 end
 
 # Space: no hash --> O(1)
-# Time: n comparisons, n lookups, n comparisons, n deletions --> O(n)
+# Time: n comparisons, n lookups, n comparisons, n deletions --> O(n^2)
+
+# "Sliding window" approach
+
+def remove_duplicates(nums)
+  return 0 if nums.length == 0
+  write = 0
+  read = 1
+
+  while read < nums.length
+    if nums[write] != nums[read]
+      write += 1
+      nums[write] = nums[read]
+    end
+    read += 1
+  end
+
+  write + 1
+end
+
+# Space: O(1)
+# Time: O(n)
+
+# "Read-Write" two-pointer solution.
+
 
 puts remove_duplicates([1, 1, 2]); # 2

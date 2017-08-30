@@ -1,4 +1,4 @@
-# Given an array of integers, return indices of the two numbers such that they add up to a specific target.
+ # Given an array of integers, return indices of the two numbers such that they add up to a specific target.
 #
 # You may assume that each input would have exactly one solution, and you may not use the same element twice.
 #
@@ -38,3 +38,5 @@ end
 
 p two_sum([2, 7, 11, 15], 9)
 p two_sum([3, 2, 4], 6)
+
+# Another possible solution. Sort the array. And then for each element int he array, do a binary search to find it's complement. The sort is O(logN) and the binary search is O(logN). Since you have to traverse the array and its O(n), that means the overall complexity is O(NlogN). The advantage here is that you keep the space complexity at O(1).
