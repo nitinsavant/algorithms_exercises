@@ -19,26 +19,33 @@
 // Space: O(1)
 // Time: O(N)
 
+// function isPalindrome(word) {
+//   if (word.length <= 1) {
+//     return true;
+//   } else if (word.length === 2) {
+//     return word[0] === word[1];
+//   } else {
+//     return isPalindrome(word[0] + word[word.length - 1]) && isPalindrome(word.slice(1, -1));
+//   }
+// }
+
 function isPalindrome(word) {
   if (word.length <= 1) {
     return true;
-  } else if (word.length === 2) {
-    return word[0] === word[1];
-  } else {
-    return isPalindrome(word[0] + word[word.length - 1]) && isPalindrome(word.slice(1, -1));
   }
+  return (word[0] == word[word.length - 1]) && isPalindrome(word.slice(1, -1));
 }
 
 
-function isPalindrome(word) {
-  if (word.length === 0) {
-    return true;
-  } else if (word[0] !== word[word.length - 1]) {
-    return false;
-  }
-
-  return isPalindrome(word.slice(1, word.length - 1));
-}
+// function isPalindrome(word) {
+//   if (word.length === 0) {
+//     return true;
+//   } else if (word[0] !== word[word.length - 1]) {
+//     return false;
+//   }
+//
+//   return isPalindrome(word.slice(1, word.length - 1));
+// }
 
 // Recursive method
 // Space:
