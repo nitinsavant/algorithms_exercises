@@ -15,7 +15,6 @@
 #   [1,2],
 #   []
 # ]
-#
 
 # Mental Model:
 # Using the start index prevents 2 things. It prevents duping values so [1, 1, 1] isn't considered a subset. It also prevents duping solutions so [1, 2, 3] and [3, 2, 1] aren't both added to the result.
@@ -24,7 +23,7 @@ def subsets(nums, solution = [], results = [], start = 0)
   results << solution.clone
 
   (start...nums.length).each do |idx|
-    
+
     solution << nums[idx]
     subsets(nums, solution, results, idx + 1)
     solution.pop
