@@ -26,7 +26,7 @@ var searchRange = function(nums, target) {
     }
   }
 
-  if (nums[left] == target) {
+  if (nums[left] === target) {
     leftmost = left;
   } else if (nums[right] === target) {
     leftmost = right;

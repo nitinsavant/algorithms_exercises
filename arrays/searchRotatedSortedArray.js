@@ -13,17 +13,22 @@ var search = function(nums, target) {
   while (left + 1 < right) {
     var mid = Math.floor(left + (right - left) / 2);
 
+    // found target
     if (nums[mid] === target) {
       return mid;
     }
 
+    // slope increasing from left to mid (if it exists, pivot is after mid)
     if (nums[left] <= nums[mid]) {
+      // if target between left and mid, throw out right half
       if (target >= nums[left] && target < nums[mid]) {
         right = mid;
       } else {
         left = mid;
       }
+    // slope increasing from mid to right (if it exists, pivot is before mid)
     } else {
+      // if target between mid and right, throw out left half
       if (target > nums[mid] && target <= nums[right]) {
         left = mid;
       } else {

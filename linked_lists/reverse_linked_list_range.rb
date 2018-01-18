@@ -12,7 +12,7 @@
 
 
 def reverse_between(head, m, n)
-  return head if m == nå
+  return head if m == n
 
   # Find node immediately prior to reversal range
   reverse_start = head

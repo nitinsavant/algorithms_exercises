@@ -8,17 +8,17 @@
 # end
 
 def reverse_list(head)
-  prev = nil
+  reversed = nil
   current = head
 
   while current
     next_node = current.next
-    current.next = prev
-    prev = current
+    current.next = reversed
+    reversed = current
     current = next_node
   end
 
-  prev
+  reversed
 end
 
 node1 = ListNode.new(1)

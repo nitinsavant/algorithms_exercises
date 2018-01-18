@@ -17,23 +17,15 @@ def delete_duplicates(head)
   return head if head.nil? || head.next.nil?
 
   tail = head.next
+  result = delete_duplicates(tail)
 
-  if tail.val == head.val
-    delete_duplicates(tail)     # throw away current head
+  if result.val == head.val
+    result
   else
-    head.next = delete_duplicates(tail)
-    head                          # keep current head
+    head.next = result
+    head
   end
 end
-
-# Elise and Sunny's solution
-# def delete_duplicates_recursion(head)
-#   return head if head.nil? || head.next.nil?
-#
-#   head.next = delete_duplicates_recursion(head.next)
-#
-#   return head.val == head.next.val ? head.next : head
-# end
 
 # Space: O(1)
 # Time: O(n)
